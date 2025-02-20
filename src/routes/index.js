@@ -1,9 +1,7 @@
-const testRouter = require('./test')
-const hopDongRouter = require('./hopDong')
+const hopDongTikluyRouter = require('./hopDongTikluy')
 
 const route = (app) => {
-    app.use(`/test`, testRouter)
-    app.use(`/hopDong`, hopDongRouter)
+    app.use(`/hopDongTikLuy`, hopDongTikluyRouter)
 }
 
 module.exports = route;

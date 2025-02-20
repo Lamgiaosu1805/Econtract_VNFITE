@@ -4,7 +4,7 @@ const puppeteer = require("puppeteer");
 const nodemailer = require("nodemailer");
 
 const HopDongController = {
-    testKyHopDong: async (req, res) => {
+    kyHDHTDTTikluy: async (req, res) => {
         const {body} = req
         try {
             const now = new Date();
@@ -41,7 +41,7 @@ const HopDongController = {
             await page.pdf({ path: outputPdfPath, format: "A4", printBackground: true });
             await browser.close();
             
-            await sendEmailWithAttachment(recipientEmail, outputPdfPath);
+            // await sendEmailWithAttachment(recipientEmail, outputPdfPath);
 
             // Gửi file PDF về client
             res.download(outputPdfPath, "hop-dong.pdf", () => {
