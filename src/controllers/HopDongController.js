@@ -6,7 +6,7 @@ const puppeteer = require("puppeteer");
 const HopDongController = {
     testKyHopDong: async (req, res) => {
         try {
-            const inputHtmlPath = path.join(__dirname, "../../FileHopDong.html"); // Đường dẫn file HTML gốc
+            const inputHtmlPath = path.join(__dirname, "../../Hợp-đồng-TIKLUY-ONLINE-_1__1.html"); // Đường dẫn file HTML gốc
             const outputPdfPath = path.join(__dirname, "../../output.pdf");
     
             // Đọc nội dung HTML
@@ -14,16 +14,17 @@ const HopDongController = {
     
             // Thay thế biến {fullname} bằng "Nguyễn Văn A"
             htmlContent = htmlContent
-            .replace(/{fullname}/g, "Nguyễn Văn A")
+            .replace(/{fullname}/g, "Nguyễn Đình Anh")
             .replace(/{soHopDong}/g, "VNC 01/2024")
-            .replace(/{ngayKy}/g, "15")
-            .replace(/{thangKy}/g, "02")
-            .replace(/{namKy}/g, "2025")
+            .replace(/{dd}/g, "15")
+            .replace(/{mo}/g, "30")
+            .replace(/{yyyy}/g, "2025")
             .replace(/{cccd}/g, "001099015069")
             .replace(/{hoKhauThuongTru}/g, "Khôn Thôn, Minh Cường, Thường Tín, Hà Nội")
-            .replace(/{sdt}/g, "0379137857")
-            .replace(/{gioKy}/g, "13")
-            .replace(/{phutKy}/g, "40")
+            .replace(/{diaChiHienTai}/g, "Khôn Thôn, Minh Cường, Thường Tín, Hà Nội")
+            .replace(/{sdt}/g, "0357628024")
+            .replace(/{hh}/g, "15")
+            .replace(/{mi}/g, "30")
     
             // Dùng Puppeteer để chuyển HTML thành PDF
             const browser = await puppeteer.launch();
